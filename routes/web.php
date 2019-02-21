@@ -15,11 +15,20 @@ Route::group(['prefix' => 'admin'], function()
 {
     Route::group(['prefix' => 'category'], function()
 	{
-	    Route::get('list', 'categoryController@getList')->name('listCat');
-	    Route::get('add', 'categoryController@getAdd')->name('addCat');
-	    Route::post('add', 'categoryController@postAdd');
-	    Route::get('edit/{id}', 'categoryController@getEdit')->name('editCat');
-	    Route::post('edit/{id}', 'categoryController@postEdit');
-	    Route::get('delete/{id}', 'categoryController@getDelete')->name('deleteCat');
+	    Route::get('list', 'CategoryController@getList')->name('listCat');
+	    Route::get('add', 'CategoryController@getAdd')->name('addCat');
+	    Route::post('add', 'CategoryController@postAdd');
+	    Route::get('edit/{id}', 'CategoryController@getEdit')->name('editCat');
+	    Route::post('edit/{id}', 'CategoryController@postEdit');
+	    Route::get('delete/{id}', 'CategoryController@getDelete')->name('deleteCat');
+	});
+	Route::group(['prefix' => 'promotion'], function()
+	{
+	    Route::get('list', 'PromotionController@getList')->name('listSale');
+	    Route::get('add', 'PromotionController@getAdd')->name('addSale');
+	    Route::post('add', 'PromotionController@postAdd');
+	    Route::get('edit/{id}', 'PromotionController@getEdit')->name('editSale');
+	    Route::post('edit/{id}', 'PromotionController@postEdit');
+	    Route::get('delete/{id}', 'PromotionController@getDelete')->name('deleteSale');
 	});
 });

@@ -46,4 +46,9 @@ return [
     'name' => 'Tên',
     'slug' => 'Tên không dấu',
     'action' => 'Hành động',
+    'sale_required' => 'Bạn chưa nhập giảm giá',
+    'sale' => 'Giảm giá',
+    'start_date' => 'Ngày bắt đầu',
+    'end_date' => 'Ngày kết thúc',
+    'sale_manage' => 'Quản lý giảm giá',
 ];
