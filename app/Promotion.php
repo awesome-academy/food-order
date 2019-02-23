@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Promotion extends Model
 {
     protected $guared = ['id'];
+
+    protected $fillable = [
+        'discount', 
+        'start_date', 
+        'end_date',
+    ];
     
     protected $date = [
     	'created_at',
