@@ -6,7 +6,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Food extends Model
 {   
+
     protected $guared = ['id'];
+
+    protected $fillable = [
+        'name', 
+        'slug', 
+        'description',
+        'content',
+        'price',
+        'top',
+        'new',
+        'promotion_id',
+    ];
     
     protected $date = [
         'created_at',
@@ -15,7 +27,7 @@ class Food extends Model
 
     public function categories()
     {
-        return $this->belongsToMany(Category::class);
+        return $this->belongsToMany('App\Category', 'category_food', 'food_id', 'category_id');
     }
 
     public function images()
