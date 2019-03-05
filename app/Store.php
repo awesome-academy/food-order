@@ -8,6 +8,13 @@ class Store extends Model
 {
     protected $guared = ['id'];
     
+    protected $fillable = [
+        'name', 
+        'description',
+        'address',
+        'avatar',
+    ];
+
     protected $date = [
     	'created_at',
     	'updated_at',
@@ -15,7 +22,7 @@ class Store extends Model
 
     public function foods()
     {
-    	return $this->belongsToMany(Food::class);
+    	return $this->belongsToMany('App\Food', 'food_store', 'store_id', 'food_id');
     }
 
     public function orders()

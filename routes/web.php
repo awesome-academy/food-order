@@ -40,4 +40,13 @@ Route::group(['prefix' => 'admin'], function()
 	    Route::post('edit/{id}', 'FoodController@postEdit');
 	    Route::get('delete/{id}', 'FoodController@getDelete')->name('deleteFood');
 	});
+	oute::group(['prefix' => 'store'], function()
+	{
+	    Route::get('list', 'StoreController@getList')->name('listStore');
+	    Route::get('add', 'StoreController@getAdd')->name('addStore');
+	    Route::post('add', 'StoreController@postAdd');
+	    Route::get('edit/{id}', 'StoreController@getEdit')->name('editStore');
+	    Route::post('edit/{id}', 'StoreController@postEdit');
+	    Route::get('delete/{id}', 'StoreController@getDelete')->name('deleteStore');
+	});
 });

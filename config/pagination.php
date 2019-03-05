@@ -2,6 +2,7 @@
     return[
         'category' => '5',
         'promotion' => '6',
-        'food' => '8'
+        'food' => '8',
+        'store' => '5',
     ]
 ?>

@@ -26,5 +26,6 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind(CategoryRepository::class);
         $this->app->bind(PromotionRepository::class);
         $this->app->bind(FoodRepository::class);
+        $this->app->bind(StoreRepository::class);
     }
 }
