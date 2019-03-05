@@ -51,4 +51,10 @@ return [
     'start_date' => 'Ngày bắt đầu',
     'end_date' => 'Ngày kết thúc',
     'sale_manage' => 'Quản lý giảm giá',
+    'description' => 'Mô tả',
+    'price' => 'Giá',
+    'top' => 'Nổi bật',
+    'new' => 'Mới',
+    'yes' => 'Có',
+    'no' => 'Không',
 ];

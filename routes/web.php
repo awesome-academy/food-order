@@ -31,4 +31,13 @@ Route::group(['prefix' => 'admin'], function()
 	    Route::post('edit/{id}', 'PromotionController@postEdit');
 	    Route::get('delete/{id}', 'PromotionController@getDelete')->name('deleteSale');
 	});
+	Route::group(['prefix' => 'food'], function()
+	{
+	    Route::get('list', 'FoodController@getList')->name('listFood');
+	    Route::get('add', 'FoodController@getAdd')->name('addFood');
+	    Route::post('add', 'FoodController@postAdd');
+	    Route::get('edit/{id}', 'FoodController@getEdit')->name('editFood');
+	    Route::post('edit/{id}', 'FoodController@postEdit');
+	    Route::get('delete/{id}', 'FoodController@getDelete')->name('deleteFood');
+	});
 });

@@ -20,6 +20,6 @@ class Category extends Model
 
     public function foods()
     {
-    	return $this->belongsToMany(Food::class);
+    	return $this->belongsToMany('App\Food', 'category_food', 'category_id', 'food_id')->withPivot('category_id');
     }
 }
