@@ -59,4 +59,10 @@ return [
     'no' => 'Không',
     'address' => 'Địa Chỉ',
     'avatar' => 'Avatar',
+    'email' => 'Email',
+    'phone_number' => 'Số Điện Thoại',
+    'level' => 'Quyền',
+    'us' => 'Người dùng',
+    'admin' => 'Admin',
+    'password' => 'Mật Khẩu'
 ];
