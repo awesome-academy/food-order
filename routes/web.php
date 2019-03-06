@@ -40,7 +40,7 @@ Route::group(['prefix' => 'admin'], function()
 	    Route::post('edit/{id}', 'FoodController@postEdit');
 	    Route::get('delete/{id}', 'FoodController@getDelete')->name('deleteFood');
 	});
-	oute::group(['prefix' => 'store'], function()
+	Route::group(['prefix' => 'store'], function()
 	{
 	    Route::get('list', 'StoreController@getList')->name('listStore');
 	    Route::get('add', 'StoreController@getAdd')->name('addStore');
@@ -48,5 +48,14 @@ Route::group(['prefix' => 'admin'], function()
 	    Route::get('edit/{id}', 'StoreController@getEdit')->name('editStore');
 	    Route::post('edit/{id}', 'StoreController@postEdit');
 	    Route::get('delete/{id}', 'StoreController@getDelete')->name('deleteStore');
+	});
+	Route::group(['prefix' => 'user'], function()
+	{
+	    Route::get('list', 'UserController@getList')->name('listUser');
+	    Route::get('add', 'UserController@getAdd')->name('addUser');
+	    Route::post('add', 'UserController@postAdd');
+	    Route::get('edit/{id}', 'UserController@getEdit')->name('editUser');
+	    Route::post('edit/{id}', 'UserController@postEdit');
+	    Route::get('delete/{id}', 'UserController@getDelete')->name('deleteUser');
 	});
 });

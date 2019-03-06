@@ -4,5 +4,6 @@
         'promotion' => '6',
         'food' => '8',
         'store' => '5',
+        'user' => '10',
     ]
 ?>
