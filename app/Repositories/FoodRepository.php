@@ -5,6 +5,7 @@ namespace App\Repositories;
 use App\Food;
 use App\Promotion;
 use App\Category;
+use App\Store;
 use App\Http\Requests\FoodRequest;
 use Illuminate\Support\Facades\Input;
 
@@ -25,6 +26,11 @@ class FoodRepository
         return Category::all();
     }
 
+    public function chooseStore()
+    {
+        return Store::all();
+    }
+
     public function findOrFail($id)
     {
         return Food::findOrFail($id);
@@ -37,16 +43,19 @@ class FoodRepository
         $food->create([
             'name' => $request->get('name'),          
             'slug' => changeTitle($request->get('name')),
-            'description' => $request->get('description'),
+            'description' =>$request->get('description'),
             'content' => $request->get('content'), 
             'price' => $request->get('price'), 
             'new' => $request->get('new'), 
             'top' => $request->get('top'),
             'promotion_id' => $request->get('promotion_id'), 
         ]); 
-        $data = Input::get('categories');
+        $data1 = Input::get('categories');
         $food = Food::orderBy('id', 'desc')->first();
-        $food->categories()->attach($data);
+        $food->categories()->attach($data1);
+        $data2 = Input::get('stores');
+        $food = Food::orderBy('id', 'desc')->first();
+        $food->stores()->attach($data2);
     }
 
     public function update(FoodRequest $request, $id)
@@ -56,16 +65,18 @@ class FoodRepository
         $food->update([
             'name' => $request->get('name'),          
             'slug' => changeTitle($request->get('name')),
-            'description' => $request->get('description'),
+            'description' =>$request->get('description'),
             'content' => $request->get('content'), 
             'price' => $request->get('price'), 
             'new' => $request->get('new'), 
             'top' => $request->get('top'),
             'promotion_id' => $request->get('promotion_id'),
         ]);
-        $data = Input::get('categories');
+        $data1 = Input::get('categories');
+        $data2 = Input::get('stores');
         $food = Food::findOrFail($id);
-        $food->categories()->sync($data);
+        $food->categories()->sync($data1);
+        $food->stores()->sync($data2);
     }
 
     public function delete($id)

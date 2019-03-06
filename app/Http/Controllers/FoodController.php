@@ -6,19 +6,21 @@ use Illuminate\Http\Request;
 use App\Food;
 use App\Promotion;
 use App\Category;
+use App\Store;
 use App\Requests;
 use App\Http\Requests\FoodRequest;
 use App\Repositories\FoodRepository;
 
 class FoodController extends Controller
 {   
-    protected $food, $promotion, $category;
+    protected $food, $promotion, $category, $store;
 
-    public function __construct(FoodRepository $food, FoodRepository $promotion, FoodRepository $category)
+    public function __construct(FoodRepository $food, FoodRepository $promotion, FoodRepository $category, FoodRepository $store)
     {
         $this->food = $food;
         $this->promotion = $promotion;
         $this->category = $category;
+        $this->store = $store;
     }
 
     public function getList()
@@ -32,8 +34,9 @@ class FoodController extends Controller
     {   
         $promotion = $this->promotion->chooseSale();
         $category = $this->category->chooseCategory();
+        $store = $this->store->chooseStore();
 
-    	return view('admin.food.add', compact('promotion', 'category'));
+    	return view('admin.food.add', compact('promotion', 'category', 'store'));
     }
 
     public function postAdd(FoodRequest $request)
@@ -50,8 +53,9 @@ class FoodController extends Controller
             $food = $this->food->findOrFail($id);
             $promotion = $this->promotion->chooseSale();
             $category = $this->category->chooseCategory();
+            $store = $this->store->chooseStore();
 
-            return view('admin.food.edit', compact('food', 'promotion', 'category'));
+            return view('admin.food.edit', compact('food', 'promotion', 'category', 'store'));
         } 
         catch (ModelNotFoundException $e) 
         {

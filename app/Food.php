@@ -47,7 +47,7 @@ class Food extends Model
 
     public function stores()
     {
-        return $this->belongsToMany(Store::class);
+        return $this->belongsToMany('App\Store', 'food_store', 'food_id', 'store_id');
     }
 
     public function comments()

@@ -62,7 +62,7 @@
                 <div class="formRow">                  
                     {!! Form::label('content', trans('setting.content'), ['class' => 'formLeft']) !!}
                     <div class="formRight">                      
-                        <span class="oneTwo">{!! Form::text('content') !!}</span>
+                        <span class="oneTwo">{!! Form::textarea('content', null, ['class' => 'form-control ckeditor', 'id' => 'demo']) !!}</span>
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -82,18 +82,18 @@
                     <div class="clear"></div>
                 </div>
                 <div class="formRow">                  
-                    {!! Form::label('new', trans('setting.new'), ['class' => 'formLeft']) !!}
-                    <div class="formRight">                      
-                        <span class="oneTwo">{{ trans('setting.yes') }} {!! Form::radio('new', '1') !!}</span>
-                        <span class="oneTwo">{{ trans('setting.no') }} {!! Form::radio('new', '0') !!}</span>
+                        {!! Form::label('new', trans('setting.new'), ['class' => 'formLeft']) !!}
+                        <div class="formRight">                      
+                            <span class="oneTwo">{{ trans('setting.yes') }} {!! Form::radio('new', '1') !!}</span>
+                            <span class="oneTwo">{{ trans('setting.no') }} {!! Form::radio('new', '0') !!}</span>
+                        </div>
+                        <div class="clear"></div>
                     </div>
-                    <div class="clear"></div>
-                </div>
                 <div class="formRow">
                     {!! Form::checkbox('check', null, false, ['id' => 'check']) !!}                  
                     {!! Form::label('promotion', trans('setting.sale'), ['class' => 'formLeft']) !!}
                     <div class="formRight">         
-                        {!! Form::select('promotion' , $promotion->pluck('discount', 'id'), null, ['id' => 'promotion', 'disabled' => 'disabled']) !!}           
+                        {!! Form::select('promotion' , $promotion->pluck('discount', 'id'), null, ['id' => 'promotion', 'disabled' => 'disabled']) !!} &nbsp; (%)           
                     </div>
                     <div class="clear"></div>
                 </div>
@@ -101,11 +101,21 @@
                     {!! Form::label('categories', trans('setting.category'), ['class' => 'formLeft']) !!}
                     <div class="formRight">                                    
                         @foreach ($category as $ca)
-                            {!! Form::checkbox('categories[]', $ca->id ) !!} &nbsp; {{ $ca->name }}<br>
+                            {!! Form::checkbox('categories[]', $ca->id ) !!} &nbsp {{ $ca->name }}<br>
                         @endforeach 
                     </div>
                     <div class="clear"></div>
                 </div>
+                <div class="formRow">                  
+                    {!! Form::label('stores', trans('setting.store'), ['class' => 'formLeft']) !!}
+                    <div class="formRight">                                    
+                        @foreach ($store as $st)
+                            {!! Form::checkbox('stores[]', $st->id ) !!} &nbsp {{ $st->name }}<br>
+                        @endforeach 
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                
                 <div class="formSubmit">                
                     {!! Form::submit(trans('setting.add'), ['class' => 'redB']) !!}
                     {!! Form::reset(trans('setting.reset'), ['class' => 'basic']) !!}                 

@@ -58,6 +58,7 @@
                         <td>{{ trans('setting.new') }}</td>
                         <td>{{ trans('setting.sale') }}</td>
                         <td>{{ trans('setting.category') }}</td>
+                        <td>{{ trans('setting.store') }}</td>
                         <td>{{ trans('setting.action') }}</td>
                     </tr>
                 </thead>
@@ -87,11 +88,16 @@
                             @if ($fo->promotion_id == null)
                                 {{ trans('setting.no') }}
                             @else
-                                {{ $fo->promotion->discount }}
+                                {{ $fo->promotion->discount }}%
                             @endif
                         <td>
                             @foreach ($fo->categories as $ca)
                                 {{ $ca->name }}
+                            @endforeach
+                        </td>
+                        <td>
+                            @foreach ($fo->stores as $st)
+                                {{ $st->name }}
                             @endforeach
                         </td>
                         <td class="option">
