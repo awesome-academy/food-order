@@ -57,4 +57,6 @@ return [
     'new' => 'Mới',
     'yes' => 'Có',
     'no' => 'Không',
+    'address' => 'Địa Chỉ',
+    'avatar' => 'Avatar',
 ];
