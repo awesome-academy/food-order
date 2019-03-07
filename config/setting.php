@@ -6,6 +6,7 @@
 		'avatar' => [
 			'store' => 'upload/store',
 			'user' => 'upload/user',
+			'banner' => 'upload/banner',
 		],
 	];
  ?>

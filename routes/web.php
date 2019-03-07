@@ -58,4 +58,13 @@ Route::group(['prefix' => 'admin'], function()
 	    Route::post('edit/{id}', 'UserController@postEdit');
 	    Route::get('delete/{id}', 'UserController@getDelete')->name('deleteUser');
 	});
+	Route::group(['prefix' => 'banner'], function()
+	{
+	    Route::get('list', 'BannerController@getList')->name('listBanner');
+	    Route::get('add', 'BannerController@getAdd')->name('addBanner');
+	    Route::post('add', 'BannerController@postAdd');
+	    Route::get('edit/{id}', 'BannerController@getEdit')->name('editBanner');
+	    Route::post('edit/{id}', 'BannerController@postEdit');
+	    Route::get('delete/{id}', 'BannerController@getDelete')->name('deleteBanner');
+	});
 });
