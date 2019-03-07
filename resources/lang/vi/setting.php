@@ -64,5 +64,11 @@ return [
     'level' => 'Quyền',
     'us' => 'Người dùng',
     'admin' => 'Admin',
-    'password' => 'Mật Khẩu'
+    'password' => 'Mật Khẩu',
+    'header_left' => 'Ordered before 17:30, shipped today - Support: 082 232 5588',
+    'about' => 'Giới Thiệu',
+    'shop' => 'Cửa Hàng',
+    'news' => 'Tin Tức',
+    'image' => 'Hình Ảnh',
+    'link' => 'Link',
 ];
