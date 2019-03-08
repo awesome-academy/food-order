@@ -33,12 +33,19 @@ Route::group(['prefix' => 'admin'], function()
 	});
 	Route::group(['prefix' => 'food'], function()
 	{
-	    Route::get('list', 'FoodController@getList')->name('listFood');
-	    Route::get('add', 'FoodController@getAdd')->name('addFood');
-	    Route::post('add', 'FoodController@postAdd');
-	    Route::get('edit/{id}', 'FoodController@getEdit')->name('editFood');
-	    Route::post('edit/{id}', 'FoodController@postEdit');
-	    Route::get('delete/{id}', 'FoodController@getDelete')->name('deleteFood');
+		Route::get('list', 'FoodController@getList')->name('listFood');
+		Route::get('add', 'FoodController@getAdd')->name('addFood');
+		Route::post('add', 'FoodController@postAdd');
+		Route::get('edit/{id}', 'FoodController@getEdit')->name('editFood');
+		Route::post('edit/{id}', 'FoodController@postEdit');
+		Route::get('delete/{id}', 'FoodController@getDelete')->name('deleteFood');
+		Route::group(['prefix' => 'image'], function()
+		{
+			Route::get('list/{id}', 'FoodImageController@getList')->name('listImage');
+			Route::get('add/{id}', 'FoodImageController@getAdd')->name('addImage');
+			Route::post('add/{id}', 'FoodImageController@postAdd');
+			Route::get('delete/{id}', 'FoodImageController@getDelete')->name('deleteImage');
+		});
 	});
 	Route::group(['prefix' => 'store'], function()
 	{

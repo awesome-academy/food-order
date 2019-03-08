@@ -6,5 +6,6 @@
         'store' => '5',
         'user' => '10',
         'banner' => '10',
+        'foodImage' => '10',
     ]
 ?>

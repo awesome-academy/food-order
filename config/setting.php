@@ -7,6 +7,7 @@
 			'store' => 'upload/store',
 			'user' => 'upload/user',
 			'banner' => 'upload/banner',
+			'foodImage' => 'upload/foodImage',
 		],
 	];
  ?>
