@@ -50,6 +50,7 @@
                     <tr>
                         <td><img src="{{ asset(config('setting.admin_image.icon')) }}/tableArrows.png"/></td>
                         <td>{{ trans('setting.name') }}</td>
+                        <td>{{ trans('setting.image') }}</td>
                         <td>{{ trans('setting.slug') }}</td>
                         <td>{{ trans('setting.description') }}</td>
                         <td>{{ trans('setting.content') }}</td>
@@ -59,6 +60,7 @@
                         <td>{{ trans('setting.sale') }}</td>
                         <td>{{ trans('setting.category') }}</td>
                         <td>{{ trans('setting.store') }}</td>
+                        <td>{{ trans('setting.image_manage') }}</td>
                         <td>{{ trans('setting.action') }}</td>
                     </tr>
                 </thead>
@@ -78,9 +80,12 @@
                         <tr class='fo_{{ $fo->id }}'>
                         <td><input type="checkbox" class="check-product" name="id[]" value="{{ $fo->id }}" /></td>
                         <td>{{ $fo->name }}</td>
+                        <td>
+                            <img id="avatar_admin" src="{{ asset(config('setting.avatar.food')) }}/{{ $fo->image }}">
+                        </td>
                         <td>{{ $fo->slug }}</td>
                         <td>{{ $fo->description }}</td>
-                        <td>{{ $fo->content }}</td>
+                        <td>{!! $fo->content !!}</td>
                         <td>{{ $fo->price }}</td>
                         <td>{{ $fo->top }}</td>
                         <td>{{ $fo->new }}</td>
@@ -100,6 +105,7 @@
                                 {{ $st->name }}
                             @endforeach
                         </td>
+                        <td class="option"><a href="{{ route('listImage', $fo->id) }}">{{ trans('setting.image') }} {{ count($fo->images) }}</a></td>
                         <td class="option">
                             <a href="{{ route('editFood', $fo->id) }} . html" title="Edit" class="tipS">
                                 <img src="{{ asset(config('setting.admin_image.icon')) }}/edit.png"/>

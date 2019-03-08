@@ -14,6 +14,9 @@ return [
     */
 
     'home' => 'Trang chủ',
+    'title' => 'Food Order',
+    'login' => 'Đăng Nhập',
+    'register' => 'Đăng Ký',
     'logout' => 'Đăng Xuất',
     'welcome' => 'Xin chào :name',
     'dashboard' => 'Bảng Điều Khiển',
@@ -71,4 +74,9 @@ return [
     'news' => 'Tin Tức',
     'image' => 'Hình Ảnh',
     'link' => 'Link',
+    'search' => 'Tìm Kiếm',
+    'checkout' => 'Checkout',
+    'follow' => 'Theo Dõi',
+    'footer_left' => 'Copyright 2019 . All Rights Reserved',
+    'image_manage' => 'Quản lý ảnh',
 ];
