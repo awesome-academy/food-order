@@ -7,8 +7,15 @@
 			'store' => 'upload/store',
 			'user' => 'upload/user',
 			'banner' => 'upload/banner',
+			'food' => 'upload/food',
 			'foodImage' => 'upload/foodImage',
 		],
+		'front_image' => [
+			'logo' => 'bower_components/assets/img/logo',
+			'brand' => 'bower_components/assets/img/brand',
+			'cart' => 'bower_components/assets/img/cart',
+			'logo' => 'bower_components/assets/img/logo',
+		]
 	];
  ?>
  

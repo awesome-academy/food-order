@@ -75,3 +75,4 @@ Route::group(['prefix' => 'admin'], function()
 	    Route::get('delete/{id}', 'BannerController@getDelete')->name('deleteBanner');
 	});
 });
+Route::get('home', 'PageController@getHome')->name('home');
