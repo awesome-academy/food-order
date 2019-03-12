@@ -15,7 +15,9 @@
 			'brand' => 'bower_components/assets/img/brand',
 			'cart' => 'bower_components/assets/img/cart',
 			'logo' => 'bower_components/assets/img/logo',
-		]
+			'ship' => 'bower_components/assets/img/ship',
+		],
+		'take' => '8',
 	];
  ?>
  

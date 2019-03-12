@@ -79,4 +79,18 @@ return [
     'follow' => 'Theo Dõi',
     'footer_left' => 'Copyright 2019 . All Rights Reserved',
     'image_manage' => 'Quản lý ảnh',
+    'homepage' => [
+        'shopping' => 'Mua Ngay',
+        'ship1' => 'Miễn Phí Giao Hàng Với Đơn Hàng Trên 500.000 VND',
+        'ship2' => 'Miễn Phí Giao Hàng',
+        'money_return1' => 'Hoàn Lại Tiền',
+        'money_return2' => 'Đảm Bảo Trở Lại Dưới 7 Ngày',
+        'support' => 'Hỗ Trợ 24/7',
+        'sale_food' => 'Sản Phẩm Giảm Giá',
+        'new_food' => 'Sản Phẩm Mới',
+        'top_food' => 'Sản Phẩm Nổi Bật',
+        'category1' => 'Bánh Ngọt',
+        'category2' => 'Chè',
+        'category3' => 'Hoa quả', 
+    ],
 ];
