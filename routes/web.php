@@ -79,4 +79,5 @@ Route::get('home', 'PageController@getHome')->name('home');
 Route::get('login', 'PageController@getLogin')->name('login');
 Route::post('login', 'PageController@postLogin');
 Route::get('logout', 'PageController@getLogout')->name('logout');
-
+Route::get('signup', 'PageController@getSignup')->name('signup');
+Route::post('signup', 'PageController@postSignup');

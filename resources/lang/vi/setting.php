@@ -103,6 +103,18 @@ return [
         'email' => 'Bạn chưa nhập email',
         'password' => 'Bạn chưa nhập password',
         'fail' => 'Đăng Nhập Thất Bại',
+        'remember' => 'Remember Me',
+    ],
+    'registerpage' => [
+        'name' => 'Tên Tài Khoản *',
+        'email' => 'Email *',
+        'phone' => 'Số Điện Thoại *',
+        'address' => 'Địa Chỉ *',
+        'password' => 'Mật Khẩu *',
+        'comfirm' => 'Nhập Lại Mật Khẩu *',
+        'passwordagain1' => 'Bạn chưa nhập lại mật khẩu',
+        'passwordagain2' => 'Mật khẩu không trùng khớp',
+        'success' => 'Chúc mừng bạn đã đăng ký thành công',
     ],
 ];
 
