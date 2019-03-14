@@ -11,7 +11,7 @@
 |
 */
 
-Route::group(['prefix' => 'admin'], function()
+Route::group(['prefix' => 'admin', 'middleware' => 'login'], function()
 {
     Route::group(['prefix' => 'category'], function()
 	{
@@ -76,3 +76,7 @@ Route::group(['prefix' => 'admin'], function()
 	});
 });
 Route::get('home', 'PageController@getHome')->name('home');
+Route::get('login', 'PageController@getLogin')->name('login');
+Route::post('login', 'PageController@postLogin');
+Route::get('logout', 'PageController@getLogout')->name('logout');
+
