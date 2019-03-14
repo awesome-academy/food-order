@@ -68,5 +68,17 @@ class PageController extends Controller
 
     	return redirect(route('home'));
     }
+
+    public function getSignup()
+    {
+        return view('front.pages.register');
+    }
+
+    public function postSignup(RegisterRequest $request)
+    {
+        $user = $this->user->addUser($request);
+
+        return redirect('signup')->with('message', trans('setting.registerpage.success'));
+    }
 }
 
