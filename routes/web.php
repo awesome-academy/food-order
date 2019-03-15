@@ -82,4 +82,5 @@ Route::get('logout', 'PageController@getLogout')->name('logout');
 Route::get('signup', 'PageController@getSignup')->name('signup');
 Route::post('signup', 'PageController@postSignup');
 Route::get('food/{id}', 'PageController@food')->name('food');
+Route::post('comment/{id}', 'CommentController@postComment')->name('comment');
 
