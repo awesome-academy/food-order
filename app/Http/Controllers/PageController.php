@@ -80,5 +80,23 @@ class PageController extends Controller
 
         return redirect('signup')->with('message', trans('setting.registerpage.success'));
     }
+
+    public function food($id)
+    {
+        try
+        {
+            $food = $this->food->findOrFail($id);           
+            foreach($food->categories as $ca)
+            {              
+                $data = $ca->pivot->category_id;             
+            } 
+
+            return view('front.pages.food', compact('food', 'data'));
+        }
+        catch (ModelNotFoundException $e) 
+        {
+            echo $e->getMessage();
+        }
+    }
 }
 
