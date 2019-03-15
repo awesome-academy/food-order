@@ -127,6 +127,7 @@ return [
         'grade' => 'Đánh Giá',
         'write' => 'Viết Bình Luận',
         'same' => 'Sản phẩm liên quan',
+        'detail' => 'Chi Tiết Sản Phẩm',
     ],
 ];
 

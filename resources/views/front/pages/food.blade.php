@@ -120,7 +120,7 @@
                 <div class="product_tab_button">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li>
-                            <a class=" tav_past active" id="home-tab" data-toggle="tab" href="#Description" role="tab" aria-controls="Description" aria-selected="true">{{ trans('setting.content') }}</a>
+                            <a class=" tav_past active" id="home-tab" data-toggle="tab" href="#Description" role="tab" aria-controls="Description" aria-selected="true">{{ trans('setting.detatail') }}</a>
                         </li>
                        <li>
                             <a class=" tav_past" id="contact-tab" data-toggle="tab" href="#Reviews" role="tab" aria-controls="Reviews" aria-selected="false">{{ trans('setting.comment') }}</a>
@@ -134,6 +134,56 @@
                        </div>
                     </div>
                 </div>
+                <div class="tab-pane fade" id="Reviews" role="tabpanel">                        
+                    <div class="product_comments_block_tab">                           
+                        <div class="comment_clearfix">
+                            <div class="comment_author">
+                                <span>{{ trans('setting.foodpage.grade') }}</span> 
+                                <div class="star_content clearfix">
+                                    <ul>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                    </ul>    
+                                </div>                                    
+                            </div>
+                            @foreach ($food->comments as $cm)
+                                <div class="comment_author_infos">
+                                    <strong>{{ $cm->user->name }}</strong>
+                                    <br>
+                                    <em>{{ $cm->created_at }}</em>    
+                                </div>
+                                <div class="comment_details">
+                                    <h4>{{ $cm->content }}</h4>   
+                                </div>
+                            @endforeach
+                        </div>                            
+                        @if (Auth::check())
+                            <div class="register_page_form">
+                                {!! Form::open(['method' => 'POST', 'route' => ['comment', $food->id]]) !!}
+                                    <div class="col-12">
+                                        <div class="input_text">
+                                            {!! Form::label('comment', trans('setting.foodpage.write'), ['for' => 'R_N1']) !!}
+                                            {!! Form::textarea('content', null, ['id' => 'R_N1']) !!}   
+                                        </div>
+                                    </div>                                   
+                                    <div class="clear"></div> &nbsp;                                      
+                                    <div class="col-12">
+                                        <div class="login_submit">
+                                            {!! Form::submit(trans('setting.comment'), ['class' => 'inline']) !!}
+                                        </div>
+                                    </div>                                  
+                                {!! Form::close() !!}
+                            </div>
+                        @else
+                            <div class="review">
+                                <p><a href="{{ route('login') }}">{{ trans('setting.foodpage.write') }}</a></p>   
+                            </div> 
+                        @endif                                
+                    </div>  
+               </div>
             </div>    
          </div>    
     </div>        
