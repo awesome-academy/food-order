@@ -11,11 +11,27 @@ use App\Repositories\CommentRepository;
 
 class CommentController extends Controller
 {   
-    protected $food;
+    protected $comment, $food;
 
-    public function __construct(CommentRepository $food)
+    public function __construct(CommentRepository $comment, CommentRepository $food)
     {
+        $this->comment = $comment;
         $this->food = $food;
+    }
+
+    public function getList($id)
+    {   
+        try
+        {
+            $food = $this->food->findFood($id);
+            $comment = $this->comment->all();
+
+            return view('admin.comment', compact('food', 'comment'));
+        }
+        catch (ModelNotFoundException $e) 
+        {
+            echo $e->getMessage();
+        }    	
     }
 
     public function postComment(Request $request, $id)
@@ -26,6 +42,20 @@ class CommentController extends Controller
 
             return redirect('food/' . $id)->with('message', trans('setting.comment_success'));
         }
+        catch (ModelNotFoundException $e) 
+        {
+            echo $e->getMessage();
+        }
+    }
+
+    public function getDelete($id)
+    {
+        try 
+        {
+            $comment = $this->comment->delete($id);
+
+            return redirect('admin/comment/list/' . $id)->with('message', trans('setting.delete_success'));
+        } 
         catch (ModelNotFoundException $e) 
         {
             echo $e->getMessage();

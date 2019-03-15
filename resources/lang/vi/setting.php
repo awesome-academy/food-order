@@ -79,6 +79,9 @@ return [
     'follow' => 'Theo Dõi',
     'footer_left' => 'Copyright 2019 . All Rights Reserved',
     'image_manage' => 'Quản lý ảnh',
+    'comment' => 'Bình Luận',
+    'create' => 'Thời gian đăng',
+    'comment_success' => 'Gửi Bình Luận Thành Công',
     'homepage' => [
         'shopping' => 'Mua Ngay',
         'ship1' => 'Đơn Hàng Trên 500.000 VND',
