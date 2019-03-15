@@ -116,5 +116,17 @@ return [
         'passwordagain2' => 'Mật khẩu không trùng khớp',
         'success' => 'Chúc mừng bạn đã đăng ký thành công',
     ],
+    'foodpage' => [
+        'quanity' => 'Số Lượng',
+        'add' => 'Thêm Giỏ Hàng',
+        'stock' => 'Còn Hàng',
+        'share' => 'Chia Sẻ',
+        'security' => 'Chính sách bảo mật *',
+        'ship' => 'Chính sách giao hàng *',
+        'return' => 'Chính sách hoàn trả *',
+        'grade' => 'Đánh Giá',
+        'write' => 'Viết Bình Luận',
+        'same' => 'Sản phẩm liên quan',
+    ],
 ];
 
