@@ -74,6 +74,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login'], function()
 	    Route::post('edit/{id}', 'BannerController@postEdit');
 	    Route::get('delete/{id}', 'BannerController@getDelete')->name('deleteBanner');
 	});
+	Route::group(['prefix' => 'comment'], function()
+	{
+		Route::get('list/{id}', 'CommentController@getList')->name('listComment');
+		Route::get('delete/{id}', 'CommentController@getDelete')->name('deleteComment');
+	});
 });
 Route::get('home', 'PageController@getHome')->name('home');
 Route::get('login', 'PageController@getLogin')->name('login');
