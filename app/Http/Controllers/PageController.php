@@ -98,5 +98,19 @@ class PageController extends Controller
             echo $e->getMessage();
         }
     }
+
+    public function category($id)
+    {
+        try
+        {
+            $categoryFood = Category::findOrFail($id);            
+
+            return view('front.pages.category', compact('categoryFood', 'id'));
+        }
+        catch (ModelNotFoundException $e) 
+        {
+            echo $e->getMessage();
+        }
+    }
 }
 
