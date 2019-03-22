@@ -89,4 +89,11 @@ Route::post('signup', 'PageController@postSignup');
 Route::get('food/{id}', 'PageController@food')->name('food');
 Route::post('comment/{id}', 'CommentController@postComment')->name('comment');
 Route::get('category/{id}', 'PageController@category')->name('category');
+Route::group(['prefix' => 'cart'], function()
+{
+    Route::post('add/{id}', 'CartController@addCart')->name('addCart');
+    Route::get('list', 'CartController@listCart')->name('listCart');
+    Route::get('delete/{id}', 'CartController@deleteCart')->name('deleteCart');
+    Route::get('update', 'CartController@updateCart');
+});
 
