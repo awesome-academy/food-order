@@ -132,5 +132,17 @@ return [
         'same' => 'Sản phẩm liên quan',
         'detail' => 'Chi Tiết Sản Phẩm',
     ],
+    'cartpage' => [
+        'total' => 'Tổng Giá',
+        'noproduct' => 'Bạn Chưa Mua Hàng',
+        'continue' => 'Tiếp Tục Mua Hàng',
+        'remove' => 'Xóa Giỏ Hàng',
+        'carttotal' => 'Tổng Giỏ Hàng',
+        'checkout' => 'Đặt Hàng',
+        'update' => 'Cập Nhật Giỏ Hàng',
+        'ship' => 'Phí Vận Chuyển',
+        'free' => 'Miễn Phí',
+        'login' => 'Đăng Nhập Để Thanh Toán',
+    ],
 ];
 
