@@ -96,4 +96,6 @@ Route::group(['prefix' => 'cart'], function()
     Route::get('delete/{id}', 'CartController@deleteCart')->name('deleteCart');
     Route::get('update', 'CartController@updateCart');
 });
-
+Route::get('user', 'PageController@getUser')->name('user');
+Route::post('user', 'PageController@postUser');
+Route::get('oldCart/{id}', 'PageController@getListOldCart')->name('oldCart');

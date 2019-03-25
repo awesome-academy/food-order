@@ -144,5 +144,17 @@ return [
         'free' => 'Miễn Phí',
         'login' => 'Đăng Nhập Để Thanh Toán',
     ],
+    'userpage' => [
+        'detail' => 'Chi tiết tài khoản',
+        'logout' => 'Đăng xuất',
+        'name' => 'Tên Tài Khoản',
+        'email' => 'Email',
+        'phone_number' => 'Số Điện Thoại',
+        'address' => 'Địa Chỉ',
+        'avatar' => 'Ảnh Đại Diện',
+        'save' => 'Lưu',
+        'password' => 'Mật Khẩu',
+        'history' => 'Lịch Sử Đơn Hàng',
+        'view' => 'Xem',
+    ]
 ];
-
