@@ -79,6 +79,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'login'], function()
 		Route::get('list/{id}', 'CommentController@getList')->name('listComment');
 		Route::get('delete/{id}', 'CommentController@getDelete')->name('deleteComment');
 	});
+	Route::group(['prefix' => 'order'], function()
+	{
+		Route::get('list', 'OrderController@getList')->name('listOrder');
+		Route::get('list/{id}', 'OrderController@getListDetail')->name('listDetail');
+		Route::get('edit/{id}', 'OrderController@getEdit')->name('editOrder');
+	    Route::post('edit/{id}', 'OrderController@postEdit');
+		Route::get('delete/{id}', 'OrderController@getDelete')->name('deleteOrder');
+	});
 });
 Route::get('home', 'PageController@getHome')->name('home');
 Route::get('login', 'PageController@getLogin')->name('login');
