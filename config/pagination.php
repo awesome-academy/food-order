@@ -7,5 +7,6 @@
         'user' => '10',
         'banner' => '10',
         'foodImage' => '10',
+        'news' => '5',
     ]
 ?>
