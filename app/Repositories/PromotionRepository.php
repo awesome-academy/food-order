@@ -7,45 +7,7 @@ use App\Http\Requests\PromotionRequest;
 
 class PromotionRepository
 {   
-    public function __construct(Promotion $promotion)
-    {
-        $this->model = $promotion;
-    }
 
-    /**
-     * @param array $data
-     * @return Promotion
-     * @throws CreatePromotionErrorException
-     */
-    public function createPromotion(array $data) : Promotion
-    {
-        try 
-        {
-            return $this->model->create($data);
-        } 
-        catch (QueryException $e) 
-        {
-            throw new CreatePromotionErrorException($e);
-        }
-    }
-
-    /**
-     * @param array $data
-     * @return bool
-     * @throws UpdatePromotionErrorException
-     */
-    public function updatePromotion(array $data) : bool
-    {
-        try 
-        {
-            return $this->model->update($data);
-        } 
-        catch (QueryException $e) 
-        {
-            throw new UpdatePromotionErrorException($e);
-        }
-    }
-    
     public function all()
     {
         return Promotion::paginate(config('pagination.promotion'));
