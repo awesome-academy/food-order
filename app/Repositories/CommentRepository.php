@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Comment;
 use App\Food;
+use App\News;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -19,6 +20,12 @@ class CommentRepository
         return Food::findOrFail($id);
     }
 
+    public function findNews($id)
+    {
+        return News::findOrFail($id);
+    }
+
+
     public function findComment($id)
     {
         return Comment::findOrFail($id);
@@ -33,11 +40,12 @@ class CommentRepository
         ]);
     }
 
-    public function delete($id)
+    public function commentNews(Request $request, $id)
     {
-        $this->findComment($id)->delete();
-
-        return true;
+        $news = News::findOrFail($id);
+        $news->comments()->create([
+            'user_id' => Auth::user()->id,
+            'content' => $request->get('content'),
+        ]);
     }
 }
-

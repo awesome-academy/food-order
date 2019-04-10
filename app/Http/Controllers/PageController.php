@@ -163,4 +163,26 @@ class PageController extends Controller
         }
 
     }
+
+    public function getNews()
+    {   
+        $news = News::paginate(config('pagination.news'));
+
+        return view('front.pages.news', compact('news'));
+    }
+
+    public function getNewsDetail($id)
+    {
+        try
+        {
+            $news = News::findOrFail($id); 
+            $user = News::where('user_id', $news->user_id)->take(config('setting.takeNews'))->get();       
+
+            return view('front.pages.newsDetail', compact('news', 'user'));
+        }
+        catch (ModelNotFoundException $e) 
+        {
+            echo $e->getMessage();
+        }
+    }
 }
