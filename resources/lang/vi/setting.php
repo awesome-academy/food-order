@@ -175,4 +175,12 @@ return [
         'yes' => 'Đã Giao Dịch',
         'no' => 'Chưa Giao Dịch',
     ],
+    'admin_news' => [
+        'title' => 'Tiêu Đề',
+        'description' => 'Tóm Tắt',
+        'content' => 'Nội Dung',
+        'image' => 'Hình Ảnh',
+        'user' => 'Người Viết',
+        'same' => ' Bài Viết Liên Quan',
+    ],
 ];
