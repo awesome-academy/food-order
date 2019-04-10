@@ -7,26 +7,28 @@ use Illuminate\Support\Facades\Auth;
 use App\Comment;
 use App\Food; 
 use App\User;
+use App\News;
 use App\Repositories\CommentRepository;
 
 class CommentController extends Controller
 {   
-    protected $comment, $food;
+    protected $comment, $food, $news;
 
-    public function __construct(CommentRepository $comment, CommentRepository $food)
+    public function __construct(CommentRepository $comment, CommentRepository $food, CommentRepository $news)
     {
         $this->comment = $comment;
         $this->food = $food;
+        $this->news = $news;
     }
 
-    public function getList($id)
+    public function getListFood($id)
     {   
         try
         {
             $food = $this->food->findFood($id);
             $comment = $this->comment->all();
 
-            return view('admin.comment', compact('food', 'comment'));
+            return view('admin.commentFood', compact('food', 'comment'));
         }
         catch (ModelNotFoundException $e) 
         {
@@ -34,7 +36,22 @@ class CommentController extends Controller
         }    	
     }
 
-    public function postComment(Request $request, $id)
+    public function getListNews($id)
+    {   
+        try
+        {
+            $news = $this->news->findNews($id);
+            $comment = $this->comment->all();
+
+            return view('admin.commentNews', compact('news', 'comment'));
+        }
+        catch (ModelNotFoundException $e) 
+        {
+            echo $e->getMessage();
+        }    	
+    }
+
+    public function postCommentFood(Request $request, $id)
     {   
         try
         {
@@ -48,18 +65,17 @@ class CommentController extends Controller
         }
     }
 
-    public function getDelete($id)
-    {
-        try 
+    public function postCommentNews(Request $request, $id)
+    {   
+        try
         {
-            $comment = $this->comment->delete($id);
+            $news = $this->news->commentNews($request, $id);
 
-            return redirect('admin/comment/list/' . $id)->with('message', trans('setting.delete_success'));
-        } 
+            return redirect('news-detail/' . $id)->with('message', trans('setting.comment_success'));
+        }
         catch (ModelNotFoundException $e) 
         {
             echo $e->getMessage();
         }
     }
 }
-

@@ -162,7 +162,7 @@
                         </div>                            
                         @if (Auth::check())
                             <div class="register_page_form">
-                                {!! Form::open(['method' => 'POST', 'route' => ['comment', $food->id]]) !!}
+                                {!! Form::open(['method' => 'POST', 'route' => ['commentFood', $food->id]]) !!}
                                     <div class="col-12">
                                         <div class="input_text">
                                             {!! Form::label('comment', trans('setting.foodpage.write'), ['for' => 'R_N1']) !!}
@@ -249,4 +249,3 @@
     </div>
 </div>
 @endsection
-

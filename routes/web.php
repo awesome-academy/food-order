@@ -104,7 +104,8 @@ Route::get('logout', 'PageController@getLogout')->name('logout');
 Route::get('signup', 'PageController@getSignup')->name('signup');
 Route::post('signup', 'PageController@postSignup');
 Route::get('food/{id}', 'PageController@food')->name('food');
-Route::post('comment/{id}', 'CommentController@postComment')->name('comment');
+Route::post('commentFood/{id}', 'CommentController@postCommentFood')->name('commentFood');
+Route::post('commentNews/{id}', 'CommentController@postCommentNews')->name('commentNews');
 Route::get('category/{id}', 'PageController@category')->name('category');
 Route::group(['prefix' => 'cart'], function()
 {
@@ -116,3 +117,5 @@ Route::group(['prefix' => 'cart'], function()
 Route::get('user', 'PageController@getUser')->name('user');
 Route::post('user', 'PageController@postUser');
 Route::get('oldCart/{id}', 'PageController@getListOldCart')->name('oldCart');
+Route::get('news', 'PageController@getNews')->name('news');
+Route::get('news-detail/{id}', 'PageController@getNewsDetail')->name('newsDetail');

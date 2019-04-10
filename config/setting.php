@@ -18,6 +18,7 @@
 			'ship' => 'bower_components/assets/img/ship',
 		],
 		'take' => '8',
+		'takeNews' => '5',
 	];
  ?>
  
